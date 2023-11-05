@@ -1,0 +1,1348 @@
+/**
+* Template Name: Personal
+* Updated: Sep 18 2023 with Bootstrap v5.3.2
+* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/* body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #040404;
+  color: black;
+  position: relative;
+  background: transparent;
+} */
+
+
+body {
+  font-family: "Starbucks", sans-serif;
+  background-color: #040404;
+  color: 000;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Garante que o conteúdo ocupe a altura total da tela */
+
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  background: white;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
+}
+
+
+@font-face {
+  font-family: 'Starbucks';
+  src: url('../fonts/SoDoSans-Black.woff') format('woff');
+}
+
+
+@media (min-width: 1024px) {
+  body::before {
+    background-attachment: fixed;
+  }
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:'Starbucks', sans-serif;
+  
+}
+
+#elemento {
+  font-family:'Starbucks', sans-serif;
+  width: 100%;
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  transition: ease-in-out 0.3s;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  z-index: 997;
+  overflow-y: auto;
+}
+
+
+#header * {
+  transition: ease-in-out 0.3s;
+}
+
+#header h1 {
+  font-size: 48px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  font-family:'Starbucks', sans-serif;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0); /* Inicialmente sem sombra */
+  transition: text-shadow 0.3s; /* Adiciona uma transição suave */
+}
+
+
+#header h1:hover {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao passar o mouse */
+}
+
+#header h1 a,
+#header h1 a:hover {
+  color: black;
+  line-height: 1;
+  display: inline-block;
+}
+
+#header h2 {
+  font-size: 24px;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#header h2 span {
+  color: black;
+  border-bottom: 2px solid green;
+  padding-bottom: 6px;
+}
+
+#header img {
+  padding: 0;
+  margin: 0;
+}
+
+#header .social-links {
+  margin-top: 20% !important;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+#header .social-links a {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
+  line-height: 1;
+  margin-right: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+#header .social-links a:hover {
+  background: green;
+}
+
+@media (max-width: 992px) {
+  #header h1 {
+    font-size: 36px;
+  }
+
+  #header h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  #header .social-links {
+    margin-top: 15px;
+  }
+
+  #header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+}
+
+/* Header Top */
+#header.header-top {
+  height: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background: white;
+}
+
+#header.header-top .social-links,
+#header.header-top h2 {
+  display: none;
+}
+
+#header.header-top h1 {
+  margin-right: auto;
+  font-size: 36px;
+}
+
+#header.header-top img {
+  max-height: 60px;
+  margin-right: 20px !important;
+}
+
+#header.header-top .container {
+  display: flex;
+  align-items: center;
+}
+
+#header.header-top .navbar {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #header.header-top {
+    height: 60px;
+  }
+
+  #header.header-top h1 {
+    font-size: 26px;
+  }
+}
+
+
+.imagem-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  filter: none;
+}
+
+.imagemportfolio {
+  width: 100%;
+  height: 100%;
+  transition: filter 0.5s, background 0.5s;
+  border-radius: 30%;
+  filter: grayscale(100%) blur(5px);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  filter: none;
+}
+
+.imagemportfolio:hover + .overlay {
+  display: block;
+}
+
+.img-portfolio {
+  width: 400px; /* Largura da imagem */
+  height: 200px; /* Altura da imagem */
+}
+
+.img-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.img-fluid {
+  border-radius: 50% !important;
+}
+
+.img-fluid :hover {
+  border-radius: 10% !important;
+  transition: border-radius 0.5s; 
+}
+
+
+.white-and-white {
+ 
+  filter: none; /* Remove o filtro, retornando a cor original da imagem */ 
+  transition: transform 1s; /* Adiciona uma transição suave de 1 segundo */
+}
+
+.white-and-white:hover {
+  filter: grayscale(100%); /* Transforma a imagem em preto e branco */
+  transition: filter 0.5s; /* Adiciona uma transição suave */
+  transform: rotate(360deg); /* Rotaciona a imagem em 45 graus quando o mouse passa por cima */
+ 
+}
+
+
+
+.photo-container {
+  position: relative;
+  width: 300px; /* Largura da imagem */
+  height: 400px; /* Altura da imagem */
+  overflow: hidden;
+  
+}
+
+.photo-border {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 90px; 
+}
+
+.img-fluid {
+  border-radius: 90px; 
+
+}
+
+.img-fluid :hover {
+  filter: grayscale(100%); /* Transforma a imagem em preto e branco */
+}
+
+
+
+.animated-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 10px solid transparent;
+  border-radius: 90px; 
+  border-image: linear-gradient(to right, red, yellow) 10;
+  animation: rotate 2s infinite;
+}
+
+hr {
+  color: green !important;
+  border: 2px solid;
+}
+
+.elemento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+}
+
+
+
+
+
+.proximo, .anterior {
+  position: fixed;
+  top: 50%;
+  
+  transform: translateY(-50%);
+    letter-spacing: 3px;
+    background: linear-gradient(#076868, green);
+    letter-spacing: 3px;
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color:#0000006f;/* Cor do texto do botão */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.proximo {
+  right: -70px;
+}
+
+ .anterior {
+  
+  left: -70px;
+} 
+
+
+
+.proximo:hover, .anterior:hover {
+  background: linear-gradient(green, #076868);
+  letter-spacing: 3px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Cor de fundo ao passar o mouse */
+}
+
+
+
+
+/* Adicione uma media query para ajustar o layout em telas menores */
+@media (max-width: 768px) {
+  .item {
+    width: calc(50% - 10px); /* 2 colunas em telas médias */
+  }
+}
+
+/* Adicione outra media query para telas ainda menores */
+@media (max-width: 480px) {
+  .item {
+    width: 100%; /* 1 coluna em telas pequenas */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(50% - 10px); /* 2 colunas em telas médias */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%; /* 1 coluna em telas pequenas */
+  }
+}
+
+/*--------------------------------------------------------------
+# Catalogo de Imagens
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #076868, green); /* Cores do gradiente */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+}
+
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar li+li {
+  margin-left: 30px;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: green;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar a:hover:before,
+.navbar li:hover>a:before,
+.navbar .active:before {
+  visibility: visible;
+  width: 25px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  background: linear-gradient(to right, #076868, green); /* Cores do gradiente */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: black;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+  margin-top: 0;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 45px;
+  left: 15px;
+  padding: 10px 0;
+  overflow-y: auto;
+  transition: 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-mobile li {
+  padding: 12px 20px;
+}
+
+.navbar-mobile li+li {
+  margin: 0;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  font-size: 16px;
+  position: relative;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 140px;
+  bottom: 100%;
+  opacity: 0;
+  transition: ease-in-out 0.4s;
+  z-index: 2;
+}
+
+section.section-show {
+  top: 100px;
+  bottom: auto;
+  opacity: 1;
+  padding-bottom: 45px;
+}
+
+section .container {
+  background: white;
+  padding: 30px;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  section {
+    top: 120px;
+  }
+
+  section.section-show {
+    top: 80px;
+  }
+}
+
+
+
+.gradient-palheta {
+  
+  background: linear-gradient(green,#076868);
+      letter-spacing: 3px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
+
+.section-title h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: green;
+  font-family: "Starbucks", sans-serif;
+  
+}
+
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: green;
+  margin: 4px 10px;
+}
+
+.section-title p {
+  margin: 0;
+  margin: -15px 0 15px 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 9999999999;
+  background: #e04e00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #000000;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #ffa200;
+  color: #000000;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+
+/* Estilize o preloader e o GIF de carregamento */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Cor de fundo do preloader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Garanta que esteja acima de todo o conteúdo */
+}
+
+#preloader img {
+  width: 200px; /* Largura do GIF de carregamento */
+  height: auto;
+ transition: transform 1s; /* Adiciona uma transição suave para a transformação */
+ transform: rotate(360deg);
+}
+
+
+.starbucks {
+  width: 300px; /* Largura do GIF de carregamento */
+  height: auto;
+  transition: transform 0.3s; /* Adiciona uma transição suave para a propriedade 'transform' */
+}
+
+#thumb {
+  position: fixed; /* Torna o elemento fixo na tela */
+  bottom: 0; /* Alinha o elemento na parte inferior da tela */
+  left: 0; /* Alinha o elemento à esquerda da tela (centralizado horizontalmente) */
+  right: 0; /* Alinha o elemento à direita da tela (centralizado horizontalmente) */
+  background-color: transparent; /* Cor de fundo do rodapé */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  padding: 10px; /* Espaçamento interno */
+}
+
+.descricao-produto {
+  font-family:'Starbucks', sans-serif;
+  color: green ;
+  font-size: 24px;
+  transition: opacity 0.3s; /* Adiciona uma transição suave para a opacidade */
+  opacity: 0; /* Começa com opacidade 0 para esconder o elemento */
+}
+
+
+
+ .box{
+  position: absolute;
+  display: grid;
+  right: 0%;
+  bottom: 10%;
+}
+
+.box a {
+  color: green;
+}
+
+ .box img{
+  width: 25px;
+  margin: 10px;
+}
+
+.box img .redes{
+  width: 18.5px;
+}
+
+
+.redes {
+  font-size: 40px;
+  background: transparent;
+  color: green;
+}
+
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about-me .content h3 {
+  font-weight: 700px;
+  font-size: 26px;
+  color: green;
+}
+
+.about-me .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-me .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.about-me .content ul strong {
+  margin-right: 10px;
+}
+
+.about-me .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: green;
+  line-height: 0;
+}
+
+.about-me .content p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+.skills .progress {
+  height: 60px;
+  display: block;
+  background: none;
+  border-radius: 0;
+}
+
+.skills .progress .skill {
+  padding: 10px 0;
+  margin: 0;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: black;
+}
+
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
+}
+
+.skills .progress-bar-wrap {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.skills .progress-bar {
+  width: 1px;
+  height: 10px;
+  transition: 0.9s;
+  background-color: green;
+}
+
+
+
+.hidden {
+  display: none !important;
+}
+
+
+.container{
+  max-width: 80%;
+  margin: 50px auto;
+}
+
+.container .left-side{
+  text-align: center;
+}
+
+.container .left-side h1{
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+
+.container .left-side h1 .green{
+  color: green;
+  font-family: 'Viga', serif;
+}
+
+.container .left-side p{
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.container .left-side a{
+  display: inline-block;
+  background: green;
+  padding: 12px 18px 12px 18px;
+  text-decoration: none;
+  border-radius: 25px;
+  color: white;
+  margin-top: 15px;
+  font-size: 16.2px;
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width: 404px){
+header{
+  display: block;
+}
+
+header .left-side a img{
+  width: 80px;
+  margin: auto;
+  display: block;
+}
+
+header .right-side{
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+header .right-side .nav-link-wrapper a{
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+}
+.container .right-side img{
+  width: 330px;
+  margin-top: -30px;
+}
+.container .right-side img{
+  max-width: 50%;
+}
+
+.container .right-side .box{
+  display: none;
+  position: absolute;
+  bottom: 250px;
+  right: 25px;
+}
+
+.container .right-side .box img{
+  width: 25px;
+  margin: 10px;
+}
+
+.container .right-side .box img.facebook{
+  width: 18.5px;
+}
+
+.thumb{
+  display: flex;
+  margin-top: -30px;
+  justify-content: center;
+}
+
+.thumb a:hover{
+  margin-top: -15px;
+  transition: 0.2s;
+}
+
+.thumb img{
+  width: 45px;
+  margin: 20px;
+}
+}
+
+/* .imgSlider img {
+  width: auto;
+  height: 80px;
+} */
+
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+.resume .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: green;
+  border: 2px solid green;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+  text-align: center;
+  background: rgba(204, 204, 204, 0.1);
+  padding: 80px 20px;
+  transition: all ease-in-out 0.3s;
+}
+
+.services .icon-box .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  background: green;
+  border-radius: 5px;
+  transition: all 0.3s ease-out 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transform-style: preserve-3d;
+}
+
+.services .icon-box .icon i {
+  color: black;
+  font-size: 28px;
+}
+
+.services .icon-box .icon::before {
+  position: absolute;
+  content: "";
+  left: -8px;
+  top: -8px;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  transition: all 0.3s ease-out 0s;
+  transform: translateZ(-1px);
+}
+
+.services .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.services .icon-box h4 a {
+  color: black;
+}
+
+.services .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.services .icon-box:hover {
+  background: green;
+  border-color: green;
+}
+
+.services .icon-box:hover .icon {
+  background: black;
+}
+
+.services .icon-box:hover .icon i {
+  color: green;
+}
+
+.services .icon-box:hover .icon::before {
+  background: green;
+}
+
+.services .icon-box:hover h4 a,
+.services .icon-box:hover p {
+  color: black;
+}
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 auto 15px auto;
+  list-style: none;
+  text-align: center;
+  border-radius: 50px;
+  padding: 2px 15px;
+}
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: black;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 3px 10px 3px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+  background: linear-gradient(to right, #076868, green); /* Cores do gradiente */
+  color: black; /* Cor do texto */
+}
+
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+
+
+.portfolio #portfolio-link {
+  padding: 0;
+  margin: 0 auto 15px auto;
+  list-style: none;
+  text-align: center;
+  border-radius: 50px;
+  padding: 2px 15px;
+}
+
+.portfolio #portfolio-link li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: black;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 3px 10px 3px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.portfolio #portfolio-link li:hover {
+  background: linear-gradient(to right, #076868, green); /* Cores do gradiente */
+  color: black; /* Cor do texto */
+}
+
+.portfolio #portfolio-link li:last-child {
+  margin-right: 0;
+}
+
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Credits
+--------------------------------------------------------------*/
+.credits {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: black;
+  z-index: 999999;
+}
+
+
+.gradient-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(to right, #076868, green); /* Cores do gradiente */
+  color: black; /* Cor do texto */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(to right, green, #076868); /* Cores do gradiente quando hover */
+}
+
+
+.button-chat {
+  position: fixed;
+  bottom: 20px; /* Distância do botão a partir do fundo */
+  right: 20px; /* Distância do botão a partir da direita */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: black; /* Cor do texto */
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-chat a {
+  border: none;
+}
+
+.button-chat img {
+  width: 80px; /* Largura da imagem */
+  height: 80px; /* Altura da imagem */
+}
+
+@media (max-width: 992px) {
+  .credits {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.credits a {
+  color: green;
+  transition: 0.3s;
+}
+
+.credits a:hover {
+  color: black;
+}
+
+
+
+
+/* Magic Share Button */
+.icone-menu {
+  background: linear-gradient(45deg, green,#076868);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.menu{
+  position:relative;
+  width:280px;
+  height:280px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+ 
+}
+.menu .toggle{
+  position:relative;
+  height:60px;
+  width:60px;
+  /* background: linear-gradient(to right, #076868, #043f3f); */
+  background: rgba(255, 255, 255, 0.1); 
+  /* transparencia */
+  border-radius:50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:black;
+  font-size:2rem;
+  cursor:pointer;
+  transition:1.25s;
+  z-index:5;
+}
+.menu.active .toggle{
+  transform:rotate(360deg);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15),
+    0 0 0 2px green,
+    0 0 0 8px #076868;
+}
+.menu li{
+  position:absolute;
+  left:0;
+  list-style:none;
+  transition:0.5s;
+  transform:rotate(calc(360deg/8 * var(--i)));
+  transform-origin:140px;
+  scale:0;
+  transition-delay: calc(0.05s * var(--i));
+}
+.menu.active li{
+  scale:1;
+}
+
+.menu li a{
+  position:relative;
+  display:flex;
+ transform:rotate(calc(360deg/-8 * var(--i)));
+  width:60px;
+  height:60px;
+  background: linear-gradient(to right, #076868, #726d6d);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:1.75rem;
+  color:var(--clr);
+   box-shadow:0 3px 4px rgba(0,0,0,0.15);
+  transition:0.5s;
+}
+.menu li:hover a{
+  font-size:2.5rem;
+  box-shadow:0 0 0 2px var(--clr),
+    0 0 0 6px black;
+}
